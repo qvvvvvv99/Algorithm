@@ -11,7 +11,7 @@ public class QuickSort {
 			System.out.print(data[i]+" ");
 	}
 	
-	public static void quick_sort(int[] ary, int low, int high) {
+	private static void quick_sort(int[] ary, int low, int high) {
 		if(low >= high)
 			return;
 		int pivot = partition(ary, low, high);
@@ -20,7 +20,7 @@ public class QuickSort {
 		quick_sort(ary, pivot+1, high);
 	}
 	
-	public static int partition(int[] ary, int left, int right) {
+	private static int partition(int[] ary, int left, int right) {
 		int low = left;
 		int high = right;
 		int pivot = ary[left];
@@ -39,7 +39,7 @@ public class QuickSort {
 		return low;
 	}
 	
-	public static void swap(int[] ary, int i, int j) {
+	private static void swap(int[] ary, int i, int j) {
 		int temp = ary[i];
 		ary[i] = ary[j];
 		ary[j] = temp;
