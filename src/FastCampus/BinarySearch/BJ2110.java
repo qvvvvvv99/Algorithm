@@ -1,5 +1,8 @@
 package FastCampus.BinarySearch;
 
+// BJ 2110번 공유기 설치
+// 이진탐색
+
 import java.io.*;
 import java.util.*;
 
