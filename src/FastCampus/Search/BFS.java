@@ -1,4 +1,4 @@
-package FastCampus.BFS;
+package FastCampus.Search;
 
 import java.util.*;
 

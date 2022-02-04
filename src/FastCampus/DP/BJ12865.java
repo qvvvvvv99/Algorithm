@@ -1,5 +1,9 @@
 package FastCampus.DP;
 
+// 백준 12865번 평범한 배낭
+// 0/1 Knapsack
+// DP or BackTracking
+
 import java.io.*;
 
 public class BJ12865 {

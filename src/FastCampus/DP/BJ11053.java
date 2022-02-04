@@ -1,5 +1,8 @@
 package FastCampus.DP;
 
+// 백준 11053번 가장 긴 증가하는 부분 수열
+// 최장 증가 부분 수열(LIS, Longest Increasing Subsequence)
+
 import java.io.*;
 import java.util.Arrays;
 
