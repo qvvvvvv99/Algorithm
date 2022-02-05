@@ -63,8 +63,8 @@ public class Dijkstra {
 			
 			for (int i = 0; i < graph.get(curNode.idx).size(); i++) {
 				Node nextNode = graph.get(curNode.idx).get(i);
-				if (d[nextNode.idx] > curNode.cost + nextNode.cost) {
-					d[nextNode.idx] = curNode.cost + nextNode.cost;
+				if (d[nextNode.idx] > d[curNode.idx] + nextNode.cost) {
+					d[nextNode.idx] = d[curNode.idx] + nextNode.cost;
 					// 갱신된 경우에만 큐에 넣는다.
 					queue.add(new Node(nextNode.idx, d[nextNode.idx]));
 				}
