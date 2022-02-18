@@ -14,29 +14,24 @@ public class BJ1620 {
 		StringTokenizer st = new StringTokenizer(input);
 		int N = Integer.parseInt(st.nextToken());
 		int M = Integer.parseInt(st.nextToken());
-		Map<Integer, String> pocketmons = new HashMap<Integer, String>();
+		String[] pocketmonsNum = new String[N+1];
+		Map<String, Integer> pocketmonsStr = new HashMap<String, Integer>();
 		StringBuffer sb = new StringBuffer();
 		
 		for(int i = 1; i <= N; i++) {
 			input = br.readLine();
-			pocketmons.put(i, input);
+			pocketmonsNum[i] = input;
+			pocketmonsStr.put(input, i);
 		}
 		
 		for(int i = 1; i <= M; i++) {
 			input = br.readLine();
 			if(input.charAt(0) - '0' >= 0 && input.charAt(0) - '0' <= 9) {
 				int n = Integer.parseInt(input);
-				sb.append(pocketmons.get(n)+"\n");
+				sb.append(pocketmonsNum[n]+"\n");
 			}
 			else {
-				Collection<String> values = pocketmons.values();
-				int cnt = 0;
-				for(String value: values) {
-					cnt++;
-					if(value.equals(input))
-						break;
-				}
-				sb.append(cnt+"\n");
+				sb.append(pocketmonsStr.get(input)+"\n");
 			}
 		}
 		
