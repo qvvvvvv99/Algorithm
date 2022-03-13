@@ -18,13 +18,14 @@ public class prime_number {
 		int[] list = new int[N+1];
 		ArrayList<Integer> prime = new ArrayList<>();
 		
+		for(int i = 2; i <= Math.sqrt(N); i++) {
+			for(int j = i*i; j <= N; j+=i)
+				list[j] = 1;
+		}
+		
 		for(int i = 2; i <= N; i++) {
 			if(list[i] == 0)
 				prime.add(i);
-			else
-				continue;
-			for(int j = i*i; j <= N; j+=i)
-				list[j] = 1;
 		}
 		
 		return prime;
