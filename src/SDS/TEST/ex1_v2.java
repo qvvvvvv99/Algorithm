@@ -1,4 +1,4 @@
-package SDS;
+package SDS.TEST;
 
 import java.awt.List;
 import java.io.BufferedReader;

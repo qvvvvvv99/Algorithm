@@ -1,4 +1,4 @@
-package SDS;
+package SDS.TEST;
 
 public class ex2 {
 

@@ -1,4 +1,4 @@
-package SDS;
+package SDS.TEST;
 
 import java.io.BufferedReader;
 import java.io.IOException;
