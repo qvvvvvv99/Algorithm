@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class BJ1713 {
@@ -13,7 +14,7 @@ public class BJ1713 {
 		int N = sc.nextInt();
 		int R = sc.nextInt();
 		LinkedList<Student> stu = new LinkedList<>();
-		// PriorityQueue<Student> stu = new PriorityQueue<>();
+//		PriorityQueue<Student> stu = new PriorityQueue<>();
 		int cnt = 0;
 		boolean[] load = new boolean[101];
 		int[] res = new int[N];
@@ -28,8 +29,8 @@ public class BJ1713 {
 					Student curr = iter.next();
 					if (curr.num == rec) {
 						curr.cnt++;
-						// stu.add(101, 0);
-						// stu.poll();
+//						stu.add(new Student(101, 0));
+//						stu.poll();
 						break;
 					}
 				}
