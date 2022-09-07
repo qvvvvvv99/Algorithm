@@ -1,29 +1,19 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
+	static int[] dial = {3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,8,9,9,9,10,10,10,10};
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int X = Integer.parseInt(br.readLine());
-		int N = Integer.parseInt(br.readLine());
-		StringTokenizer st;
-		int sum = 0;
-		int a, b;
+		Scanner sc = new Scanner(System.in);
 		
-		for(int i = 0; i < N; i++) {
-			st = new StringTokenizer(br.readLine());
-			a = Integer.parseInt(st.nextToken());
-			b = Integer.parseInt(st.nextToken());
-			sum += a * b;
+		String str = sc.nextLine();
+		int sum = 0;
+		for(int i = 0; i < str.length(); i++) {
+			sum += dial[str.charAt(i) - 'A'];
 		}
-		if(sum == X)
-			System.out.println("Yes");
-		else
-			System.out.println("No");
+		
+		System.out.println(sum);
 	}
 
 }
