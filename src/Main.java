@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -5,27 +7,17 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int X = sc.nextInt();
-		int n = 0, idx = 1;
-		int ja, mo;
+		int N = sc.nextInt();
+		int k= sc.nextInt();
+		int[] ary = new int[N];
 		
-		while(true) {
-			if(n >= X)
-				break;
-			
-			n += idx;
-			idx++;
-		}
-		n -= (idx - 1);
-		if(idx % 2 == 1) {
-			mo = idx - (X - n);
-			ja = X - n;
-		}else {
-			mo = X - n;
-			ja = idx - (X - n);
+		for(int i = 0; i < N; i++) {
+			ary[i] = sc.nextInt();
 		}
 		
-		System.out.println(ja+"/"+mo);
+		Arrays.sort(ary);
+		
+		System.out.println(ary[N-k]);
 	}
 
 }
