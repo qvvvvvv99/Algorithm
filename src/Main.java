@@ -4,32 +4,45 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
+	static int sum;
+	static int min;
+	static boolean flag;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
+		int M = sc.nextInt();
 		int N = sc.nextInt();
-
-		if(N > 1) {
-			ArrayList<Integer> list = new ArrayList<>();
-			while(true) {
-				int i;
-				for(i = 2; i <= (int)Math.sqrt(N); i++) {
-					if(N % i == 0) {
-						N /= i;
-						list.add(i);
-						break;
-					}
-				}
-				if(i > (int)Math.sqrt(N)) {
-					list.add(N);
-					break;
-				}
+		
+		for(int i = N; i >= M; i--) {
+			if(i % 2 == 0 || i == 1)
+				continue;
+			if (isPrime(i)) {
+				sum += i;
+				min = i;
 			}
-			
-			for(int i = 0; i < list.size(); i++)
-				System.out.println(list.get(i));
 		}
+		
+		if(M <= 2) {
+			sum += 2;
+			min = 2;
+			flag = true;
+		}
+		if(N == 1)
+			flag = false;
+		
+		if(flag == false)
+			System.out.println(-1);
+		else
+			System.out.println(sum + "\n" + min);
 	}
 
+	public static boolean isPrime(int num) {
+		for(int i = 2; i <= (int)Math.sqrt(num); i++) {
+			if(num % i == 0)
+				return false;
+		}
+		flag = true;
+		return true;
+	}
 }
