@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class BJ92341 {
+public class Prog92341 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
