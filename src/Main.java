@@ -4,13 +4,22 @@ public class Main {
 
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String l1 = sc.next();
-        String l2 = sc.next();
+        int N = sc.nextInt();
+        int sum = 0;
+        int curr;
+        int score = 1;
         
-        if(l1.length() < l2.length())
-            System.out.println("no");
-        else
-            System.out.println("go");
+        for(int i = 0; i < N; i++) {
+        	curr = sc.nextInt();
+        	if(curr == 0)
+        		score = 1;
+        	else {
+        		sum += score;
+        		score++;
+        	}
+        }
+        
+        System.out.println(sum);
     }
 }
 
