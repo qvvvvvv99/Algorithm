@@ -4,22 +4,21 @@ public class Main {
 
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int sum = 0;
-        int curr;
-        int score = 1;
+        int tc = sc.nextInt();
         
-        for(int i = 0; i < N; i++) {
-        	curr = sc.nextInt();
-        	if(curr == 0)
-        		score = 1;
-        	else {
-        		sum += score;
-        		score++;
-        	}
+        for(int T = 0; T < tc; T++) {
+        	int a = sc.nextInt();
+        	int b = sc.nextInt();
+        	
+        	int r = 1;
+        	
+        	for(int i = 0; i < b; i++)
+        		r = (r*a) % 10;
+        	if(r==0)
+        		r = 10;
+        	
+        	System.out.println(r);
         }
-        
-        System.out.println(sum);
     }
 }
 
