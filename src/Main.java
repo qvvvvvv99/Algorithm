@@ -4,21 +4,18 @@ public class Main {
 
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int tc = sc.nextInt();
+        int N = sc.nextInt();
         
-        for(int T = 0; T < tc; T++) {
-        	int a = sc.nextInt();
-        	int b = sc.nextInt();
-        	
-        	int r = 1;
-        	
-        	for(int i = 0; i < b; i++)
-        		r = (r*a) % 10;
-        	if(r==0)
-        		r = 10;
-        	
-        	System.out.println(r);
+        int b = N % 10;
+        N /= 10;
+        if(b == 0){
+            b = N % 10;
+            b *= 10;
+            N /= 10;
         }
+        int a = N;
+        
+        System.out.println(a+b);
     }
 }
 
