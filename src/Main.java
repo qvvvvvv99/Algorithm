@@ -5,22 +5,16 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
+		System.out.println("int a;");
+		System.out.println("int *ptr = &a;");
 
-		for (int t = 0; t < n; t++) {
-			String str = sc.next();
-
-			int sum1 = 0, sum2 = 0;
-
-			for (int i = 0; i < 3; i++)
-				sum1 += (str.charAt(i) - 'A') * Math.pow(26, 2 - i);
-
-			String[] s = str.split("-");
-			sum2 = Integer.parseInt(s[1]);
-
-			if(Math.abs(sum1-sum2) <= 100)
-				System.out.println("nice");
-			else
-				System.out.println("not nice");
+		if(n >= 2) 
+			System.out.println("int **ptr2 = &ptr;");
+		
+		String pointer = "**";
+		for(int i = 3; i <= n; i++) {
+			pointer += "*";
+			System.out.println("int "+ pointer + "ptr"+i +" = &ptr"+(i-1)+";");
 		}
 	}
 }
