@@ -3,9 +3,20 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		 Scanner sc = new Scanner(System.in);
-		 
-		 System.out.println(sc.nextInt() + sc.nextInt());  
+		Scanner s = new Scanner(System.in);
+
+		int n1, n2;
+
+        while(true){
+            n1 = s.nextInt();
+            n2 = s.nextInt();
+            if(n1 == 0 && n2 == 0)
+                break;
+            
+            if(n1 > n2)
+                System.out.println("Yes");
+            else
+                System.out.println("No");
 	}
 	// https://www.acmicpc.net/problem/2558
 }
