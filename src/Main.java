@@ -3,22 +3,16 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 
-		int n1, n2;
+		int n = sc.nextInt();
 
-		while (true) {
-			n1 = s.nextInt();
-			n2 = s.nextInt();
-			if (n1 == 0 && n2 == 0)
-				break;
-
-			if (n1 > n2)
-				System.out.println("Yes");
-			else
-				System.out.println("No");
+		for(int i = n; i > 0; i--) {
+			for(int j = i; j > 0; j--) {
+				System.out.print("*");
+			}
+			System.out.println();
 		}
-		// https://www.acmicpc.net/problem/2558
 	}
 }
 
