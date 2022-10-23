@@ -5,12 +5,18 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-        int b = sc.nextInt();
+		long S = sc.nextLong();
+		long sum = 0;
+		int answer = 1;
+		
+		while(true) {
+			sum += answer;
+			if(sum > S)
+				break;
+			answer++;
+		}
         
-        a /= 2;
-        
-        System.out.println(Math.min(a,b));
+        System.out.println(answer-1);
     }
 }
 
