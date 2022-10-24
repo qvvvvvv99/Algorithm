@@ -5,18 +5,20 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		long S = sc.nextLong();
-		long sum = 0;
-		int answer = 1;
+		int N = sc.nextInt();
+		int[] ary = new int[N];
+		for(int i = 0; i < N; i++)
+			ary[i] = sc.nextInt();
 		
-		while(true) {
-			sum += answer;
-			if(sum > S)
-				break;
-			answer++;
+		int v = sc.nextInt();
+
+		int answer = 0;
+		for(int i = 0; i < N; i++) {
+			if(v == ary[i])
+				answer++;
 		}
-        
-        System.out.println(answer-1);
+		
+        System.out.println(answer);
     }
 }
 
