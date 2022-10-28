@@ -5,17 +5,20 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
-		int[] ary = new int[N];
-		for(int i = 0; i < N; i++)
-			ary[i] = sc.nextInt();
-		
-		int v = sc.nextInt();
-
-		int answer = 0;
-		for(int i = 0; i < N; i++) {
-			if(v == ary[i])
-				answer++;
+		int mon = sc.nextInt();
+		int day = sc.nextInt();
+		String answer = "";
+		if(mon < 2)
+			answer = "Before";
+		else if(mon > 2)
+			answer = "After";
+		else {
+			if(day < 18)
+				answer = "Before";
+			else if(day > 18)
+				answer = "After";
+			else
+				answer = "Special";
 		}
 		
         System.out.println(answer);
