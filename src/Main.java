@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -5,23 +6,16 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int mon = sc.nextInt();
-		int day = sc.nextInt();
-		String answer = "";
-		if(mon < 2)
-			answer = "Before";
-		else if(mon > 2)
-			answer = "After";
-		else {
-			if(day < 18)
-				answer = "Before";
-			else if(day > 18)
-				answer = "After";
-			else
-				answer = "Special";
-		}
+		int[] ary = new int[5];
+		int sum = 0;
 		
-        System.out.println(answer);
+		for(int i = 0; i < 5; i++) {
+			ary[i] = sc.nextInt();
+			sum += ary[i];
+		}
+		Arrays.sort(ary);
+		System.out.println(sum/5);
+		System.out.println(ary[2]);
     }
 }
 
