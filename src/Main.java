@@ -6,16 +6,12 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int[] ary = new int[5];
-		int sum = 0;
+		String c = sc.next();
 		
-		for(int i = 0; i < 5; i++) {
-			ary[i] = sc.nextInt();
-			sum += ary[i];
-		}
-		Arrays.sort(ary);
-		System.out.println(sum/5);
-		System.out.println(ary[2]);
+		if(c.equals("N") || c.equals("n"))
+			System.out.println("Naver D2");
+		else
+			System.out.println("Naver Whale");
     }
 }
 
