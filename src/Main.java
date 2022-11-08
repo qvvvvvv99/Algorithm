@@ -5,14 +5,9 @@ public class Main {
 
 	public static void main(String[] args){
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		String str = sc.next();
-        BigInteger N = new BigInteger(str);
-        str = sc.next();
-        BigInteger M = new BigInteger(str);
-        
-        System.out.println(N.divide(M));
-        System.out.println(N.remainder(M));
+		System.out.println(".  .   .");
+		System.out.println("|  | _ | _. _ ._ _  _");
+		System.out.println("|/\\|(/.|(_.(_)[ | )(/.");
     }
 }
 
