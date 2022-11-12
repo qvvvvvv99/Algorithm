@@ -5,7 +5,10 @@ public class Main {
 
 	public static void main(String[] args){
 		// TODO Auto-generated method stub
-		System.out.println("고려대학교");
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		
+		System.out.println((int)(N * 0.78) + " " + (int)((N * 0.8)+((N*0.2)*0.78)));
     }
 }
 
