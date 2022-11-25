@@ -5,25 +5,25 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Scanner sc = new Scanner(System.in);
-//		BigInteger A = sc.nextBigInteger();
-//		BigInteger B = sc.nextBigInteger();
-//		BigInteger C = sc.nextBigInteger();
-//		BigInteger sum = A;
-//		sum = sum.add(B);
-//		sum = sum.add(C);
+		Scanner sc = new Scanner(System.in);
+		String input;
+		StringBuffer sb = new StringBuffer();
 		
-//		System.out.println(sum);
-		System.out.println("     /~\\\n" + 
-				"    ( oo|\n" + 
-				"    _\\=/_\n" + 
-				"   /  _  \\\n" + 
-				"  //|/.\\|\\\\\n" + 
-				" ||  \\ /  ||\n" + 
-				"============\n" + 
-				"|          |\n" + 
-				"|          |\n" + 
-				"|          |");
+		while(true) {
+			input = sc.nextLine();
+			if(input.equals("#"))
+				break;
+			input = input.toLowerCase();
+			int n = 0;
+			
+			for(int i = 0; i < input.length(); i++) {
+				if(input.charAt(i) == 'a' || input.charAt(i) == 'e' || input.charAt(i) == 'i' || input.charAt(i) == 'o' || input.charAt(i) == 'u')
+					n++;
+			}
+			
+			sb.append(n+"\n");
+		}
+		System.out.print(sb);
 	}
 }
 
