@@ -11,17 +11,15 @@ public class Main {
 		
 		while(true) {
 			input = sc.nextLine();
-			if(input.equals("#"))
+			if(input.equals("# 0 0"))
 				break;
-			input = input.toLowerCase();
-			int n = 0;
+			String[] str = input.split(" ");
 			
-			for(int i = 0; i < input.length(); i++) {
-				if(input.charAt(i) == 'a' || input.charAt(i) == 'e' || input.charAt(i) == 'i' || input.charAt(i) == 'o' || input.charAt(i) == 'u')
-					n++;
-			}
-			
-			sb.append(n+"\n");
+			sb.append(str[0]);
+			if(Integer.parseInt(str[1]) > 17 || Integer.parseInt(str[2]) >= 80)
+				sb.append(" Senior\n");
+			else
+				sb.append(" Junior\n");
 		}
 		System.out.print(sb);
 	}
