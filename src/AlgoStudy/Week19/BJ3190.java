@@ -8,8 +8,6 @@ import java.util.LinkedList;
 import java.util.Deque;
 import java.util.StringTokenizer;
 
-import javax.management.Query;
-
 public class BJ3190 {
 	static int N, K, L;
 	static int[][] map;	// 0 : ºó°Å, 1 : ¹ì, 2 : »ç°ú
