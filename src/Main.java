@@ -6,9 +6,18 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		String str = sc.nextLine();
+		int N = sc.nextInt();
 		
-		System.out.print(str.length());
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i < N; i++) {
+			String str = sc.next();
+			if(str.length() >= 6 && str.length() <= 9)
+				sb.append("yes\n");
+			else
+				sb.append("no\n");
+		}
+		
+		System.out.print(sb);
 	}
 }
 
