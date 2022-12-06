@@ -4,17 +4,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class BJ23741 {
 
 	static int N, M, X, Y;
-	static HashSet<Integer> hs = new HashSet<>();
+	static ArrayList<Integer> res = new ArrayList<>();
 	static boolean[][] visited;
+	static HashSet<Integer>[] map;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
@@ -24,7 +24,7 @@ public class BJ23741 {
 		M = Integer.parseInt(st.nextToken());
 		X = Integer.parseInt(st.nextToken());
 		Y = Integer.parseInt(st.nextToken());
-		HashSet<Integer>[] map = new HashSet[N+1];
+		map = new HashSet[N+1];
 		for(int i = 1; i <= N; i++)
 			map[i] = new HashSet<Integer>();
 		
@@ -37,47 +37,29 @@ public class BJ23741 {
 			map[v].add(u);
 		}
 		
-		visited = new boolean[N+1][M+1];
-		bfs(map);
+		visited = new boolean[N+1][Y+1];
+		dfs(X, 0);
 		
-		if(hs.isEmpty())
-			hs.add(-1);
-		Iterator iter = hs.iterator();
-		while(iter.hasNext())
-			System.out.print(iter.next()+" ");
+		Collections.sort(res);
+		if(res.isEmpty())
+			res.add(-1);
+		for(int i = 0; i < res.size(); i++)
+			System.out.print(res.get(i)+" ");
 	}
 	
-	static void bfs(HashSet<Integer>[] map) {
-		Queue<route> queue = new LinkedList<>();
-		queue.add(new route(X, 0));
-		visited[X][0] =  true;
+	static void dfs(int v, int cnt) {
+		visited[v][cnt] = true;
 		
-		while(!queue.isEmpty()) {
-			route curr = queue.poll();
-			if(curr.n > Y)
-				break;
-			else if(curr.n == Y)
-				hs.add(curr.v);
-			else {
-				Iterator iter = map[curr.v].iterator();
-				while(iter.hasNext()) {
-					int next = (Integer)iter.next();
-					if(visited[next][curr.n+1] == true)
-						continue;
-					queue.add(new route(next, curr.n+1));
-					visited[next][curr.n+1] = true;
-				}
-			}
+		if(cnt == Y) {
+			res.add(v);
+			return;
 		}
-	}
-}
-
-class route{
-	int v;
-	int n;
-	
-	route(int v, int n){
-		this.v = v;
-		this.n = n;
+		
+		Iterator iter = map[v].iterator();
+		while(iter.hasNext()) {
+			int next = (int) iter.next();
+			if(!visited[next][cnt+1])
+				dfs(next, cnt+1);
+		}
 	}
 }
