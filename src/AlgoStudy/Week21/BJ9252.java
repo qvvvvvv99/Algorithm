@@ -15,11 +15,9 @@ public class BJ9252 {
 		int[][] res = new int[N][M];
 		
 		int i, j;
-		for(i = 0; i < N; i++) {
-			for(j = 0; j < M; j++) {
-				if(i == 0 || j == 0)
-					continue;
-				else if(str1.charAt(i-1) != str2.charAt(j-1))
+		for(i = 1; i < N; i++) {
+			for(j = 1; j < M; j++) {
+				if(str1.charAt(i-1) != str2.charAt(j-1))
 					res[i][j] = Math.max(res[i-1][j], res[i][j-1]);
 				else
 					res[i][j] = res[i-1][j-1]+1;
@@ -40,7 +38,7 @@ public class BJ9252 {
 				i--;
 				j--;
 				result = str1.charAt(i) + result;
-				len--;
+				len = res[i-1][j-1];
 			}
 		}
 		System.out.println(result);
