@@ -2,23 +2,16 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
-		
-		StringBuffer sb = new StringBuffer();
-		for(int i = 0; i < N; i++) {
-			String str = sc.next();
-			if(str.length() >= 6 && str.length() <= 9)
-				sb.append("yes\n");
-			else
-				sb.append("no\n");
-		}
-		
-		System.out.print(sb);
-	}
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+        long temp = 0;
+        for (int i = 0; i < input.length(); i++) {
+            temp = (temp * 10 + (input.charAt(i) - '0')) % 20000303;
+        }
+        
+        System.out.println(temp);
+    }
 }
 
 //public static boolean isPrime(int num) {
