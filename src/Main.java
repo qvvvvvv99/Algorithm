@@ -4,10 +4,16 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
-        long a = sc.nextLong();
-        long b = sc.nextLong();
+        int n, sum = 0;
         
-        System.out.println(Math.abs(a-b));
+        for(int i = 0; i < 5; i++) {
+        	n = sc.nextInt();
+        	if(n < 40)
+        		n = 40;
+        	sum += n;
+        }
+        
+        System.out.println(sum / 5);
     }
 }
 
