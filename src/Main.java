@@ -4,12 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
-        int Ur = sc.nextInt();
-        int Tr = sc.nextInt();
-        int Uo = sc.nextInt();
-        int To = sc.nextInt();
+        BigInteger n = sc.nextBigInteger();
         
-        System.out.println(56*Ur+24*Tr+14*Uo+6*To);
+        System.out.println(n.pow(3));
     }
 }
 
