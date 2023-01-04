@@ -11,7 +11,7 @@ public class BJ15591 {
 	static int N, Q;
 	static LinkedList<Node>[] graph;
 	static boolean[] visited;
-	static long[][] usado;
+	static int[][] usado;
 	static int start = 0;
 	
 	public static void main(String[] args) throws IOException {
@@ -35,12 +35,12 @@ public class BJ15591 {
 		}
 		
 		visited = new boolean[N+1];
-		usado = new long[N+1][N+1];
+		usado = new int[N+1][N+1];
 		for(int i = 1; i <= N; i++) {
 			Arrays.fill(visited, false);
 			start++;
 			visited[i] = true;
-			dfs(i, Long.MAX_VALUE);
+			dfs(i, Integer.MAX_VALUE);
 		}
 		
 		StringBuffer sb = new StringBuffer();
@@ -61,7 +61,7 @@ public class BJ15591 {
 		System.out.print(sb);
 	}
 
-	static void dfs(int v, long min) {
+	static void dfs(int v, int min) {
 		int next, p;
 		
 		for(int i = 0; i < graph[v].size(); i++) {
