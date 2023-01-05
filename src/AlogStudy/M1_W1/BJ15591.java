@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 public class BJ15591 {
 	static int N, Q;
-	static LinkedList<Node>[] graph;
+	static LinkedList<Value>[] graph;
 	static boolean[] visited;
 	static int[][] usado;
 	static int start = 0;
@@ -30,8 +30,8 @@ public class BJ15591 {
 			p = Integer.parseInt(st.nextToken());
 			q = Integer.parseInt(st.nextToken());
 			r = Integer.parseInt(st.nextToken());
-			graph[p].add(new Node(q, r));
-			graph[q].add(new Node(p, r));
+			graph[p].add(new Value(q, r));
+			graph[q].add(new Value(p, r));
 		}
 		
 		visited = new boolean[N+1];
@@ -76,11 +76,11 @@ public class BJ15591 {
 	}
 }
 
-class Node{
+class Value{
 	int desti;
 	int price;
 	
-	Node(int desti, int price){
+	Value(int desti, int price){
 		this.desti = desti;
 		this.price = price;
 	}
