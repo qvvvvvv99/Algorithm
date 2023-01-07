@@ -4,9 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
-        BigInteger n = sc.nextBigInteger();
+        int n = sc.nextInt();
         
-        System.out.println(n.pow(3));
+        for(int i = 0; i < n; i++) {
+        	int p = sc.nextInt();
+        	int t = sc.nextInt();
+        	System.out.println(p - (t/7) + (t/4));
+        }
     }
 }
 
