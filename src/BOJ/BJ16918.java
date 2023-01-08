@@ -34,6 +34,7 @@ public class BJ16918 {
 				}
 			}
 		} else {
+			int cnt = 0;
 			boolean[][] visited = new boolean[R][C];
 			boolean[][] bomb = new boolean[R][C];
 			for (int i = 0; i < R; i++) {
@@ -43,6 +44,7 @@ public class BJ16918 {
 					if (map[i].charAt(j) == 'O') {
 						visited[i][j] = true;
 						bomb[i][j] = true;
+						cnt++;
 						int nx, ny;
 						for (int d = 0; d < 4; d++) {
 							nx = i + dx[d];
@@ -58,6 +60,7 @@ public class BJ16918 {
 				}
 			}
 
+			// ¸ðµç Ä­¿¡ ÆøÅºÀÌ ÀÖ´ÂÁö È®ÀÎ
 			for (int i = 0; i < R; i++) {
 				for (int j = 0; j < C; j++) {
 					if (!bomb[i][j]) {
@@ -69,26 +72,83 @@ public class BJ16918 {
 					break;
 			}
 
+			// ÆøÅºÀÌ °¡µæÂ÷Áö ¾Ê´Â´Ù¸é
+			// 3°¡Áö °æ¿ì
 			if (!flag) {
-				if (N % 2 == 0) {
+				if (cnt == 0) {
+					String s;
+					if(N % 4 == 1) 
+						s = ".";
+					else
+						s = "O";
 					for (int i = 0; i < R; i++) {
 						map[i] = "";
 						for (int j = 0; j < C; j++) {
-							map[i] += "O";
+							map[i] += s;
 						}
 					}
-				} else if (N % 4 == 3) {
-					for (int i = 0; i < R; i++) {
-						map[i] = "";
-						for (int j = 0; j < C; j++) {
-							if (bomb[i][j])
-								map[i] += ".";
-							else
+				} else {
+					// 1. Â¦¼öÃÊ´Â ¸ðµÎ ÆøÅº
+					if (N % 2 == 0) {
+						for (int i = 0; i < R; i++) {
+							map[i] = "";
+							for (int j = 0; j < C; j++) {
 								map[i] += "O";
+							}
+						}
+					}
+					// 2. ³ª¸ÓÁö 3 ÀÏ¶§´Â Ã³À½ ÆøÅºÀÌ ÅÍÁö°í ³ª¸ÓÁö´Â ´Ù ÆøÅº
+					else if (N % 4 == 3) {
+						for (int i = 0; i < R; i++) {
+							map[i] = "";
+							for (int j = 0; j < C; j++) {
+								if (bomb[i][j])
+									map[i] += ".";
+								else
+									map[i] += "O";
+							}
+						}
+					}
+					// 3. ³ª¸ÓÁö 1 ÀÏ¶§´Â
+					else if(N % 4 == 1){
+						visited = new boolean[R][C];
+						boolean[][] newbomb = new boolean[R][C];
+						for (int i = 0; i < R; i++) {
+							for (int j = 0; j < C; j++) {
+								if (visited[i][j])
+									continue;
+								if (!bomb[i][j]) {
+									visited[i][j] = true;
+									newbomb[i][j] = true;
+									cnt++;
+									int nx, ny;
+									for (int d = 0; d < 4; d++) {
+										nx = i + dx[d];
+										ny = j + dy[d];
+										if (nx < 0 || nx >= R || ny < 0 || ny >= C)
+											continue;
+										if (bomb[nx][ny]) {
+											newbomb[nx][ny] = true;
+											visited[nx][ny] = true;
+										}
+									}
+								}
+							}
+						}
+						for (int i = 0; i < R; i++) {
+							map[i] = "";
+							for (int j = 0; j < C; j++) {
+								if(newbomb[i][j] == true)
+									map[i] += ".";
+								else 
+									map[i] += "O";
+							}
 						}
 					}
 				}
-			} else {
+			}
+			// ÆøÅºÀÌ °¡µæÂ÷ÀÖ´Â °æ¿ì
+			else {
 				for (int i = 0; i < R; i++) {
 					map[i] = "";
 					for (int j = 0; j < C; j++) {
