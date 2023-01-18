@@ -4,14 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
-        int sum = 0;
+        String str = sc.next();
+        char c = str.charAt(0);
+        int len = 84;
         
-        for(int i = 0; i < 4; i++) {
-        	int s = sc.nextInt();
-        	sum += s;
-        }
-    	System.out.println(sum / 60);
-    	System.out.println(sum % 60);
+        len += Math.abs(c-'I');
+        
+        System.out.println(len);
     }
 }
 
