@@ -4,13 +4,15 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        char c = str.charAt(0);
-        int len = 84;
+        int N = sc.nextInt();
+        StringBuffer sb = new StringBuffer();
         
-        len += Math.abs(c-'I');
+        for(int i = 0; i < N; i++) {
+        	String str = sc.next();
+            sb.append(str.toLowerCase()).append("\n");
+        }
         
-        System.out.println(len);
+        System.out.print(sb);
     }
 }
 
