@@ -1,61 +1,17 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
-    public static void main (String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int r = sc.nextInt();
-        int c = sc.nextInt();
-        int[][] map = new int[N][N];
-        
-        int num = 2;
-        int len = 1;
-        int x = 0;
-        int y = 0;
-        int dir = 1;
-        map[0][0] = 1;
-        
-        for(int i = 1; i < N; i++) {
-        	if(i % 2 == 0) {
-        		x+=1;
-        		map[x][y] = num;
-        		num++;
-        		dir = 1;
-        		for(int j = 0; j < len; j++) {
-        			y += dir;
-        			map[x][y] = num;
-        			num++;
-        		}
-        		dir = -1;
-        		for(int j = 0; j < len; j++) {
-        			x += dir;
-        			map[x][y] = num;
-        			num++;
-        		}
-        	}
-        	else {
-        		y+=1;
-        		map[x][y] = num;
-        		num++;
-        		dir = 1;
-        		for(int j = 0; j < len; j++) {
-        			x += dir;
-        			map[x][y] = num;
-        			num++;
-        		}
-        		dir = -1;
-        		for(int j = 0; j < len; j++) {
-        			y += dir;
-        			map[x][y] = num;
-        			num++;
-        		}
-        	}
-        	len++;
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+        String s;
+        while ((s = sc.nextLine()) != null) {
+            System.out.println(s);
         }
-        
-        System.out.println(map[r-1][c-1]);
-    }
+	}
 }
 
 //public static boolean isPrime(int num) {
