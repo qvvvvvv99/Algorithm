@@ -1,17 +1,16 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.math.BigInteger;
-import java.util.Scanner;
+import java.util.*;
 
-public class Main {
-	public static void main(String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
-        String s;
-        while ((s = sc.nextLine()) != null) {
-            System.out.println(s);
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        sc.nextLine();
+        for(int i = 0; i < n; i++){
+            String[] nums = sc.nextLine().split(",");
+            System.out.println(Integer.parseInt(nums[0]) + Integer.parseInt(nums[1]));
         }
-	}
+    }
 }
 
 //public static boolean isPrime(int num) {
