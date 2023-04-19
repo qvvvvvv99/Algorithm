@@ -3,12 +3,25 @@ import java.util.*;
 class Main{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int a, b;
         
-        sc.nextLine();
-        for(int i = 0; i < n; i++){
-            String[] nums = sc.nextLine().split(",");
-            System.out.println(Integer.parseInt(nums[0]) + Integer.parseInt(nums[1]));
+        while(true) {
+        	a = sc.nextInt();
+        	b = sc.nextInt();
+        	if(a == 0 && b == 0)
+        		break;
+        	if(a < b) {
+        		if((b / a)*a == b)
+        			System.out.println("factor");
+        		else
+        			System.out.println("neither");
+        	}
+        	else {
+        		if((a / b)*b == a)
+        			System.out.println("multiple");
+        		else
+        			System.out.println("neither");
+        	}
         }
     }
 }
