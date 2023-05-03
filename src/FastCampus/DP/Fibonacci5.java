@@ -3,7 +3,7 @@ package FastCampus.DP;
 import java.util.*;
 
 public class Fibonacci5 {
-	// BOJ 10870¹ø
+	// BJAlgo.BOJ 10870ï¿½ï¿½
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
@@ -15,7 +15,7 @@ public class Fibonacci5 {
 	}
 
 	public static void version1(int n) {
-//		Version1. ¹è¿­ »ç¿ë
+//		Version1. ï¿½è¿­ ï¿½ï¿½ï¿½
 		if (n != 0) {
 			int[] ary = new int[n + 1];
 			ary[0] = 0;
@@ -31,7 +31,7 @@ public class Fibonacci5 {
 
 	public static void version2(int n) {
 
-//		Version2. ArrayList »ç¿ë
+//		Version2. ArrayList ï¿½ï¿½ï¿½
 		ArrayList<Integer> ary = new ArrayList<>();
 		ary.add(0);
 		ary.add(1);

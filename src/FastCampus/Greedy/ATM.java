@@ -2,7 +2,7 @@ package FastCampus.Greedy;
 
 import java.util.*;
 
-// BOJ 11399¹ø
+// BJAlgo.BOJ 11399ï¿½ï¿½
 public class ATM {
 
 	public static void main(String[] args) {

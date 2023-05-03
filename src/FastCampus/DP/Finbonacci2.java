@@ -3,7 +3,7 @@ package FastCampus.DP;
 import java.util.*;
 
 public class Finbonacci2 {
-	// BOJ 2748¹ø
+	// BJAlgo.BOJ 2748ï¿½ï¿½
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
